@@ -37,6 +37,6 @@ public class Pista {
 	public Pist(String nomeIlha, String mensagem) {
 		this.nomeIlha = nomeIlha;
 		this.mensagem = mensagem;
-		this.proximaPixta = null
+		this.proximaPixta = null;
 	}
 }
