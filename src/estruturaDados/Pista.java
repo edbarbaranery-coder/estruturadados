@@ -7,7 +7,7 @@ public class Pista {
 	private String mensagem;
 	
 	// Atributos tipo "NO"
-	private Pista proximaPixta;
+	private Pista proximaPista;
 	
 	// Construtor
 	public String getNomeIlha() {
@@ -27,16 +27,16 @@ public class Pista {
 	}
 
 	public Pista getProximaPixta() {
-		return proximaPixta;
+		return this.proximaPista;
 	}
 
-	public void setProximaPixta(Pista proximaPixta) {
-		this.proximaPixta = proximaPixta;
+	public void setProximaPita(Pista proximaPista) {
+		this.proximaPista = proximaPista;
 	}
 
-	public Pist(String nomeIlha, String mensagem) {
+	public Pista(String nomeIlha, String mensagem) {
 		this.nomeIlha = nomeIlha;
 		this.mensagem = mensagem;
-		this.proximaPixta = null;
+		this.proximaPista = null;
 	}
 }
