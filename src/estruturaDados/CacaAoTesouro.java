@@ -8,6 +8,9 @@ public class CacaAoTesouro {
 	private Pista ultimaPista;
 	
 	// Construtor para iniciar lista vazia
-	
+	public CacaAoTesouro() {
+		this.primeiraPista = null;
+		this.ultimaPista = null;
+	}
 	
 }
