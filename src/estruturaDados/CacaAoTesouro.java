@@ -63,6 +63,32 @@ public class CacaAoTesouro {
 			return false; // Lista vazia
 		}
 		
-		
+		if (this.primeiraPista.getNomeIlha().equalsIgnoreCase(nomeIlha)){
+			this.primeiraPista = this.primeiraPista.getProximaPista();
+	        if (this.primeiraPista == null) {
+	            this.ultimaPista = null; // A lista ficou vazia
+	        }
+	        return true;
+	    }
+
+	    // Caso 2: A pista está no meio ou no final (Tail)
+	    Pista anterior = this.primeiraPista;
+	    Pista atual = this.primeiraPista.getProximaPista();
+
+	    while (atual != null) {
+	        if (atual.getNomeIlha().equalsIgnoreCase(nomeIlha)) {
+	            anterior.setProximaPista(atual.getProximaPista());
+	            
+	            // Se o elemento removido era o último, atualizamos a ultimaPista
+	            if (atual == this.ultimaPista) {
+	                this.ultimaPista = anterior;
+	            }
+	            return true;
+	        }
+	        anterior = atual;
+	        atual = atual.getProximaPista();
+	    }
+
+	    return false; // Ilha não encontrada
 	}
 }
