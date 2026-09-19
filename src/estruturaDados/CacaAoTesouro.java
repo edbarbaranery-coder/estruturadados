@@ -24,8 +24,45 @@ public class CacaAoTesouro {
 		} else {
 			
 			// Se ja houver elementos, liga o ultimo atual a nova pista e atualiza o ponteiro do fim
-			this.ultimaPista.setProximaPita(novaPista);
+			this.ultimaPista.setProximaPista(novaPista);
 			this.ultimaPista = novaPista;
 		}
+	}
+	
+	// Iniciaar jonadar
+	public void iniciarJornada() {
+		if (this.primeiraPista == null) {
+			System.out.println("O mapa está vazio! Nenhum pista foi cadastrada.");
+			return;
+		}
+		Pista atual = this.primeiraPista;
+		while (atual != null) {
+			System.out.println("Ilha: " + atual.getNomeIlha() + " | Enigma: " + atual.getMensagem());
+			atual = atual.getProximaPista(); //Avança  para a proxima pista();
+		}
+	}
+	
+	// Busca Pista (para percorremos a lista
+	
+	public Pista buscarPista(String nomeIlha) {
+		Pista atual = this.primeiraPista;
+		while (atual != null) {
+			if (atual.getNomeIlha().equalsIgnoreCase(nomeIlha)) {
+				return atual;
+			}
+			atual = atual.getProximaPista();
+		}
+		System.out.println(" Alerta: A ilha " + nomeIlha + " não foi encontrada!");
+		return null;
+	}
+	
+	// Remover
+	
+	public boolean removerPista(String nomeIlha) {
+		if (this.primeiraPista == null) {
+			return false; // Lista vazia
+		}
+		
+		
 	}
 }

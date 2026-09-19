@@ -26,11 +26,11 @@ public class Pista {
 		this.mensagem = mensagem;
 	}
 
-	public Pista getProximaPixta() {
+	public Pista getProximaPista() {
 		return this.proximaPista;
 	}
 
-	public void setProximaPita(Pista proximaPista) {
+	public void setProximaPista(Pista proximaPista) {
 		this.proximaPista = proximaPista;
 	}
 
